@@ -23,7 +23,7 @@ With respect to this particular method, the author wrote:
 > The game will also end if the board has become completely full. 
 > Otherwise, play passes to the other player.
 
-The current player is recorded in an instance variable named `currentPlayer`.a
+The current player is recorded in an instance variable named `currentPlayer`.
 The value of this variable is one of the two constants `WHITE` or `BLACK`. 
 The game can be ended by calling a method named `gameOver()`. 
 I wrote a boolean-valued method called `winner()` to check whether a move
