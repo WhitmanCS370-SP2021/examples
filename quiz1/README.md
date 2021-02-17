@@ -25,8 +25,10 @@ With respect to this particular method, the author wrote:
 
 The current player is recorded in an instance variable named `currentPlayer`.
 The value of this variable is one of the two constants `WHITE` or `BLACK`. 
+
 The game can be ended by calling a method named `gameOver()`. 
 I wrote a boolean-valued method called `winner()` to check whether a move
 wins the game. 
+
 You may also find it helpful to know that `message` is a graphical user interface component that displays text, specifically a `Label`.
 
