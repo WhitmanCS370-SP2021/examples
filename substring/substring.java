@@ -1,4 +1,4 @@
-// Which version is better? (exercise 2.17)
+// Which version is better? (exercise 2.17, p. 44)
 
 // Version 1
 public String substring(int start) {

@@ -1,4 +1,4 @@
-// Which version is better?
+// Which version is better? (exercise 2.18, p. 44)
 
 // Version 1
 public class SSNWrapper {
