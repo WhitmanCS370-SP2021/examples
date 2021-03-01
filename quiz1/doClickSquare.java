@@ -1,14 +1,28 @@
+private static final int EMPTY = -1;
+private static final int BLACK = 0
+private static final int WHITE = 1;
+
+private int currentPlayer = BLACK;
+private String message = "";
+
+private boolean winner(int row, int col) {...}
+
 /**
- *	Called by mousePressed() when a player clicks on 
- *	the square in the specified row and column.
+ * TODO: Write external documentation for this public method.
+ * Called by mousePressed() when a player clicks on 
+ * the square in the specified row and column.
  */
 public void doClickSquare(int row, int col) {
+
+    //TODO: Extract method, constants
 
     String currentPlayerString;
     if (currentPlayer == BLACK)
         currentPlayerString = "Black";
     else
         currentPlayerString = "White";
+
+    // TODO: Extract method, throw exception for errors
 
     /* Check that the user clicked an empty square.  
        If not, show an error message and exit. */
@@ -26,6 +40,9 @@ public void doClickSquare(int row, int col) {
     board[row][col] = currentPlayer;  // Make the move.
     drawPiece(currentPlayer, row, col);
 
+    // TODO: Refactor the rest so that it is self-explanatory 
+    // and all at a consistent level of abstraction.
+
     if (winner(row,col)) {  // First, check for a winner.
         gameOver(currentPlayerString + " wins the game!");
         return;
@@ -42,7 +59,7 @@ public void doClickSquare(int row, int col) {
     }
 
     /* Continue the game.  It's the other player's turn. */
-    
+
     if (currentPlayer == BLACK) {
         currentPlayer = WHITE;
         message.setText(“WHITE:  Make your move.”);
