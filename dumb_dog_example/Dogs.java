@@ -1,45 +1,39 @@
 class Dog {
-    protected String sound;
-    public Dog() {
-        sound = "woof";
-    }
     public void bark() {
-        bark(1, false);
+        System.out.println("Woof!");
     }
     public void bark(int times) {
-        bark(times, false);
+        for (int i=0; i<times; i++) {
+            bark();
+        }
+    }
+    public void bark(boolean loud) {
+        if (loud) {
+            System.out.println("WOOF!");
+        } else  {
+            System.out.println("Woof!");
+        }
     }
     public void bark(int times, boolean loud) {
         for (int i=0; i<times; i++) {
-            if (loud) {
-                System.out.println(sound.toUpperCase());
-            } else {
-                System.out.println(sound.toLowerCase());
-            }
+            bark(loud);
         }
     }
 }
 class Hound extends Dog {
-    public Hound () {
-        sound = "bay";
+    public void bark() {
+        System.out.println("Bay!");
     }
     public void sniff() {
-        System.out.println("sniff");
-    }
-    public void sniff(Dog dog) {
-        System.out.println("shnuff");
-    }
-    public void sniff(Hound dog) {
-        System.out.println("whoof");
+        System.out.println("sniiiifffff");
     }
 }
-public class Dogs {
+public class Dogs1 {
     public static void main(String [] args){
         Dog clifford = new Dog();
         Dog mac = new Hound();
-        clifford.bark(3, true);
-        mac.bark();
-        mac.sniff(clifford);
+        clifford.bark(3,true);
+        mac.bark(3,true);
     }
 }
 // What is the output of running this program?
