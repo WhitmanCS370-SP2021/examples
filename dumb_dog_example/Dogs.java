@@ -1,3 +1,4 @@
+// Refactored so that Hound always says "bay" for any version of bark().
 class Dog {
     protected String sound;
     public Dog() {
@@ -42,6 +43,3 @@ public class Dogs {
         mac.sniff(clifford);
     }
 }
-// What is the output of running this program?
-// Where is an example of method overloading?
-// Where is an example of method overriding?
