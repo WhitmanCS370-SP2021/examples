@@ -1,6 +1,6 @@
 class Switch {
     private boolean on = false;
-    public void    toggle()          { on = !on; }
+    public void toggle()             { on = !on; }
     public boolean isOn()            { return on; }
 }
 
