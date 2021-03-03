@@ -1,11 +1,27 @@
+private class SpaceTakenException extends Exception;
+
 private static final int EMPTY = -1;
 private static final int BLACK = 0
 private static final int WHITE = 1;
+private static final String[] playerNames = { "Black", "White" };
 
 private int currentPlayer = BLACK;
 private String message = "";
 
 private boolean winner(int row, int col) {...}
+
+private String currentPlayerString() {
+    return playerNames[currentPlayer];
+}
+
+private void makeMove(int row, int col) throws SpaceTakenException {
+    if ( board[row][col] != EMPTY ) {
+        throw SpaceTakenException;
+    }
+       
+    board[row][col] = currentPlayer;  
+    drawPiece(currentPlayer, row, col);
+}
 
 /**
  * TODO: Write external documentation for this public method.
@@ -14,37 +30,19 @@ private boolean winner(int row, int col) {...}
  */
 public void doClickSquare(int row, int col) {
 
-    //TODO: Extract method, constants
-
-    String currentPlayerString;
-    if (currentPlayer == BLACK)
-        currentPlayerString = "Black";
-    else
-        currentPlayerString = "White";
-
-    // TODO: Extract method, throw exception for errors
-
-    /* Check that the user clicked an empty square.  
-       If not, show an error message and exit. */
-       
-    if ( board[row][col] != EMPTY ) {
-        message.setText(currentPlayerString + 
+    try {
+        makeMove(row, col);
+    } catch SpaceTakenException {
+        message.setText(currentPlayerString() + 
                         ": Please click an empty square.");
         return;
     }
-
-    /* Make the move.  Check if the board is full or 
-       if the move is a winning move.  If so, the game ends.  
-       If not, then it's the other user's turn. */    
-       
-    board[row][col] = currentPlayer;  // Make the move.
-    drawPiece(currentPlayer, row, col);
 
     // TODO: Refactor the rest so that it is self-explanatory 
     // and all at a consistent level of abstraction.
 
     if (winner(row,col)) {  // First, check for a winner.
-        gameOver(currentPlayerString + " wins the game!");
+        gameOver(currentPlayerString() + " wins the game!");
         return;
     }
 
