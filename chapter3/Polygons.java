@@ -20,6 +20,7 @@ class Triangle {
 }
 
 public void Polygons {
+  private  Collection<Polygon> polygons;
   public void paint(Graphics g) {
     for (Polygon p: polygons) {
       p.draw();
