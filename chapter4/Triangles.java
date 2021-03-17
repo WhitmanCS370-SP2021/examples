@@ -39,6 +39,21 @@ class Triangles {
     tri[2] = new ColoredTriangle(new Point(0,3), new Point(4,0), new Point(4,3),
                                  Color.RED);
 
+    System.out.println("Test that equals is an equivalence relation");
+    System.out.print("Reflexive:");
+    for (Triangle t : tri) System.out.print(t.equals(t));
+    System.out.print("\nSymmetric:");
+    for (Triangle t1 : tri) 
+      for (Triangle t2 : tri)
+         System.out.print(t1.equals(t2) == t2.equals(t1));
+    System.out.print("\nTransitive:");
+    for (Triangle t1 : tri) 
+      for (Triangle t2 : tri)
+        for (Triangle t3 : tri) 
+          if (t1.equals(t2) && t2.equals(t3))
+            System.out.print(t1.equals(t3));
+       
+    System.out.println("\n\nTest that equals obeys the LSP");
     for (Triangle t1 : tri) {
       System.out.println(t1);
       for (Triangle t2 : tri) {
