@@ -1,5 +1,9 @@
-// Exercise 4.14, p. 123
-public class B {
+// Exercise 4.14, p. 12
+class A {
+  // Does not override Object.equals()
+} 
+
+public class B extends A { 
   private int x = 0;
 
   public B(int x) { 
