@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Switch {
     private boolean on = false;
     public void toggle()             { on = !on; }
