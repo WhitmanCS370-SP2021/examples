@@ -3,11 +3,11 @@ class SearchResults {
 
     Iterator<Car> get Iterator();
 
-    void filterByPrice(maxPrice)
-    void filterByYear(earliestYear)
-    void filterByMake(make)
-    void filterByModel(model)
-    void filterByColor(color)
+    SearchResults filterByPrice(maxPrice)
+    SearchResults filterByYear(earliestYear)
+    SearchResults filterByMake(make)
+    SearchResults filterByModel(model)
+    SearchResults filterByColor(color)
 }
 
 class CarDealer {
@@ -17,9 +17,8 @@ class CarDealer {
 
 CarDealer dealer;
 ...
-SearchResults results = dealer.search();
-results.filterByPrice(3000);
-results.filterByColor("Blue");
+SearchResults results = 
+    dealer.search().filterByPrice(3000).filterByColor("Blue");
 for (Car car : results) 
     System.out.println(car)
 
