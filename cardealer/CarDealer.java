@@ -1,14 +1,25 @@
-class CarDealer {
+class SearchResults {
     Collection<Car> cars;
 
-    Collection<Car> filterByPrice(range)
+    Iterator<Car> get Iterator();
 
-    Collection<Car> filterByYear(yr)
-
-    filterByMake(make)
-
-    filterByModel(model)
-
-    filterByColor(color)
-
+    void filterByPrice(maxPrice)
+    void filterByYear(earliestYear)
+    void filterByMake(make)
+    void filterByModel(model)
+    void filterByColor(color)
 }
+
+class CarDealer {
+    Collection<Car> cars;
+    SearchResults search();
+}
+
+CarDealer dealer;
+...
+SearchResults results = dealer.search();
+results.filterByPrice(3000);
+results.filterByColor("Blue");
+for (Car car : results) 
+    System.out.println(car)
+
